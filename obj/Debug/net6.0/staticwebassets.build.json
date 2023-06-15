@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OWrgYxYr3wlu1uZiQjW4ggX9S145czwZOoNTzmGESAQ=",
+  "Source": "MQTT_Api_Server_Lifesaver",
+  "BasePath": "_content/MQTT_Api_Server_Lifesaver",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

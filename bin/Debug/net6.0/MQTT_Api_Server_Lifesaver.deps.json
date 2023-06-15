@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MQTT_Api_Server_Lifesaver/1.0.0": {
+        "runtime": {
+          "MQTT_Api_Server_Lifesaver.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MQTT_Api_Server_Lifesaver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
