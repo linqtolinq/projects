@@ -1,12 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
-
-  <ItemGroup>
+﻿<ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.23.3" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.53.0" />
     <PackageReference Include="Grpc.Net.Client" Version="2.53.0" />
@@ -16,20 +8,9 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\404.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 
   <ItemGroup>
-    <None Update="exhook.proto">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-<ItemGroup>
 		<Protobuf Include="exhook.proto" ProtoRoot="." GrpcServices="Server" OutputDir="./Mqtt_GPC" CompileOutputs="false" />
 </ItemGroup>
 
-</Project>
+

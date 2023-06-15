@@ -19,3 +19,14 @@ E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\obj\Debug\net6.0\refint\MQT
 E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\obj\Debug\net6.0\MQTT_Api_Server_Lifesaver.pdb
 E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\obj\Debug\net6.0\MQTT_Api_Server_Lifesaver.genruntimeconfig.cache
 E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\obj\Debug\net6.0\ref\MQTT_Api_Server_Lifesaver.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\wwwroot\404.html
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\MQTT_Api_Server_Lifesaver.staticwebassets.runtime.json
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\exhook.proto
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Google.Protobuf.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Grpc.Core.Api.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Grpc.Net.Client.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Grpc.Net.Common.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\obj\Debug\net6.0\MQTT_Api_Server_Lifesaver.csproj.CopyComplete

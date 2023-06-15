@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "OWrgYxYr3wlu1uZiQjW4ggX9S145czwZOoNTzmGESAQ=",
+  "Hash": "Gn0VX5ZJC7xah1qfFk1EWm3/Ay+8IknVehWAdAKqY4g=",
   "Source": "MQTT_Api_Server_Lifesaver",
   "BasePath": "_content/MQTT_Api_Server_Lifesaver",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "MQTT_Api_Server_Lifesaver\\wwwroot",
+      "Source": "MQTT_Api_Server_Lifesaver",
+      "ContentRoot": "E:\\Code\\Projects\\Lifesaver\\MQTT_Api_Server_Lifesaver\\wwwroot\\",
+      "BasePath": "_content/MQTT_Api_Server_Lifesaver",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\Code\\Projects\\Lifesaver\\MQTT_Api_Server_Lifesaver\\wwwroot\\404.html",
+      "SourceId": "MQTT_Api_Server_Lifesaver",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Code\\Projects\\Lifesaver\\MQTT_Api_Server_Lifesaver\\wwwroot\\",
+      "BasePath": "_content/MQTT_Api_Server_Lifesaver",
+      "RelativePath": "404.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Always",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\404.html"
+    }
+  ]
 }
