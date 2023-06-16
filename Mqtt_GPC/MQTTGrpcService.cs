@@ -12,7 +12,7 @@
         }
 
         /// <summary>
-        /// 返回需要挂载的钩子列表。仅在该列表中的钩子会被回调到 HookProivder 服务。
+        /// 返回需要挂载的钩子列表。仅在该列表中的钩子会被回调到 HookProivder 服务。[1]
         /// </summary>
         /// <param name="request"></param>
         /// <param name="context"></param>
@@ -104,11 +104,7 @@
         /// <returns></returns>
         public override Task<EmptySuccess> OnClientConnected(ClientConnectedRequest request, ServerCallContext context)
         {
-            //_logger.LogInformation($"OnClientConnected:{request}");
-            //Console.WriteLine(request.ToString());
-
-            //request.Clientinfo.Clientid.AddRequestQueue();
-
+            request.PushConnQueue();
             EmptySuccess reply = new EmptySuccess();
             return Task.FromResult(reply);
         }
@@ -121,7 +117,7 @@
         /// <returns></returns>
         public override Task<EmptySuccess> OnClientDisconnected(ClientDisconnectedRequest request, ServerCallContext context)
         {
-            //_logger.LogInformation($"OnClientDisconnected:{request}");
+            request.PushDisConnQueue();
             EmptySuccess reply = new EmptySuccess();
             return Task.FromResult(reply);
         }
@@ -256,11 +252,18 @@
         /// <returns></returns>
         public override Task<ValuedResponse> OnMessagePublish(MessagePublishRequest request, ServerCallContext context)
         {
-            //_logger.LogInformation($"OnMessagePublish:{request}");
-            //Console.WriteLine(context.AuthContext.PeerIdentityPropertyName);
             ValuedResponse reply = new ValuedResponse();
             reply.Message = request.Message;
             reply.Type = ValuedResponse.Types.ResponsedType.StopAndReturn;
+            MqttPayload mqttPayload = new MqttPayload();
+            mqttPayload.ClientId = request.Message.From;
+            mqttPayload.Node = request.Meta.Node;
+            mqttPayload.Qos = request.Message.Qos.ToString();
+            mqttPayload.Payload = System.Text.Encoding.UTF8.GetString(request.Message.Payload.ToArray());
+            mqttPayload.Topic = request.Message.Topic;
+            mqttPayload.From = request.Message.From;
+            mqttPayload.Id = IdGenFunc.CreateOneId();
+            mqttPayload.PushMsgQueue();
             return Task.FromResult(reply);
         }
 

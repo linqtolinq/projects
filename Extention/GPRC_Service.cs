@@ -13,8 +13,11 @@ namespace MQTT_Api_Server_Lifesaver.Extention
                 options.Listen(IPAddress.Any, 6725, listenOptions =>
                 {
                     listenOptions.Protocols = HttpProtocols.Http2;
-                    //listenOptions.UseHttps("<path to .pfx file>",
-                    //    "<certificate password>");
+                });
+
+                options.Listen(IPAddress.Any, 6726, listenOptions =>
+                {
+                    listenOptions.Protocols = HttpProtocols.Http1;
                 });
             });
         }

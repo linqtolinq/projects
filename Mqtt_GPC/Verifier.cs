@@ -1,5 +1,8 @@
 ﻿namespace EmqxHookASPNET.Services
 {
+    /// <summary>
+    /// 用于grpc服务的鉴权
+    /// </summary>
     public class Verifier
     {
         private readonly ILogger<Verifier> _logger;
