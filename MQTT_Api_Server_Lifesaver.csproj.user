@@ -3,5 +3,6 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>ApiControllerWithActionsScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
+    <NameOfLastUsedPublishProfile>E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\Properties\PublishProfiles\registry.hub.docker.com_smallwhitepassingby.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
