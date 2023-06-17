@@ -12,7 +12,8 @@ global using System.Collections.Concurrent;
 global using MQTT_Api_Server_Lifesaver.Model;
 global using MQTT_Api_Server_Lifesaver.DB;
 global using MQTT_Api_Server_Lifesaver.Mqtt_GPC;
-
+global using MQTT_Api_Server_Lifesaver.Hub;
+global using Microsoft.AspNetCore.SignalR;
 namespace MQTT_Api_Server_Lifesaver.Global
 {
     public class GlobalUsing

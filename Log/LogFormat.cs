@@ -72,6 +72,10 @@ namespace MQTT_Api_Server_Lifesaver.Log
         }
         public static async void LogToDb()
         {
+            if (logqueue.Count == 0)
+            {
+                return;
+            }
             await MongoDBHelper.Db!.DbGetCollection<LogFormat>().InsertManyAsync(logqueue);
             logqueue.Clear();
         }

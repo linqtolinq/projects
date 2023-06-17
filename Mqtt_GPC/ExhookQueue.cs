@@ -52,6 +52,7 @@ namespace MQTT_Api_Server_Lifesaver.Mqtt_GPC
                                 Remark = "无"
                             }) ;
                         }
+                        Worker.SendDeviceUpdateToClients(clientConnectedRequest.Clientinfo.Clientid.RemoveWhitespaces());
                     }
                     if (mqttdisconnectdqueue.TryDequeue(out clientDisConnectedRequest))
                     {
@@ -74,10 +75,12 @@ namespace MQTT_Api_Server_Lifesaver.Mqtt_GPC
                                 Remark = "无"
                             });
                         }
+                        Worker.SendDeviceUpdateToClients(clientDisConnectedRequest.Clientinfo.Clientid.RemoveWhitespaces());
                     }
                     if (MqttPayloadQueue.TryDequeue(out mqttPayload))
                     {
                         await db.DbGetCollection<MqttPayload>().InsertOneAsync(mqttPayload);
+                        Worker.MqttMsgUpdate();
                     }
                     Thread.Sleep(TimeSpan.FromSeconds(1));
                 }

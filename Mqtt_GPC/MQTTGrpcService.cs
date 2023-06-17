@@ -4,11 +4,13 @@
     {
         private readonly ILogger<MQTTGrpcService> _logger;
         private Verifier _verifier;
+        private readonly IHubContext<ClockHub, IClock> clockHub;
 
-        public MQTTGrpcService(ILogger<MQTTGrpcService> logger, Verifier verifier)
+        public MQTTGrpcService(ILogger<MQTTGrpcService> logger, Verifier verifier, IHubContext<ClockHub, IClock> clockHub)
         {
             this._logger = logger;
             this._verifier = verifier;
+            this.clockHub = clockHub;
         }
 
         /// <summary>
@@ -19,7 +21,7 @@
         /// <returns></returns>
         public override Task<LoadedResponse> OnProviderLoaded(ProviderLoadedRequest request, ServerCallContext context)
         {
-            //_logger.LogInformation($"OnProviderLoaded: {request}" );
+            LogHelper.LogInfo(IdGenFunc.CreateOneId(),"后台钩子挂载完成" );
             var response = new LoadedResponse();
             response.Hooks.AddRange(GetHookSpec());
             return Task.FromResult(response);
@@ -33,7 +35,7 @@
         /// <returns></returns>
         public override Task<EmptySuccess> OnProviderUnloaded(ProviderUnloadedRequest request, ServerCallContext context)
         {
-            //_logger.LogInformation($"OnProviderUnloaded: {request}");
+            LogHelper.LogInfo(IdGenFunc.CreateOneId(), "后台钩子卸载完成");
             return Task.FromResult(new EmptySuccess());
         }
 
@@ -45,7 +47,7 @@
         /// <returns></returns>
         public override Task<ValuedResponse> OnClientAuthenticate(ClientAuthenticateRequest request, ServerCallContext context)
         {
-            //_logger.LogInformation($"OnClientAuthenticate:{request}");
+ 
             bool passed = _verifier.Verify(request.Clientinfo);
             ValuedResponse reply = new ValuedResponse();
             reply.BoolResult = passed;
@@ -130,8 +132,7 @@
         /// <returns></returns>
         public override Task<EmptySuccess> OnClientSubscribe(ClientSubscribeRequest request, ServerCallContext context)
         {
-
-            //_logger.LogInformation($"OnClientSubscribe:{request.TopicFilters}");
+            LogHelper.LogInfo(IdGenFunc.CreateOneId(), $"客户端【{request.Clientinfo.Clientid}】订阅话题:{JsonHelper.GetJsonStr(request.TopicFilters)}");
             //request.AddRequestQueue();
             EmptySuccess reply = new EmptySuccess();
             return Task.FromResult(reply);
@@ -145,7 +146,7 @@
         /// <returns></returns>
         public override Task<EmptySuccess> OnClientUnsubscribe(ClientUnsubscribeRequest request, ServerCallContext context)
         {
-            //_logger.LogInformation($"OnClientUnsubscribe:{request}");
+            LogHelper.LogInfo(IdGenFunc.CreateOneId(), $"客户端【{request.Clientinfo.Clientid}】取消订阅话题:{JsonHelper.GetJsonStr(request.TopicFilters)}");
             EmptySuccess reply = new EmptySuccess();
             return Task.FromResult(reply);
         }

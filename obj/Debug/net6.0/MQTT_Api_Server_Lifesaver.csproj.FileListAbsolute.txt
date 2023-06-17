@@ -50,3 +50,4 @@ E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\runtimes\l
 E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
 E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\FluentScheduler.dll
+E:\Code\Projects\Lifesaver\MQTT_Api_Server_Lifesaver\bin\Debug\net6.0\Newtonsoft.Json.dll

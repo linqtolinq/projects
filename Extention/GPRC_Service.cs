@@ -14,11 +14,7 @@ namespace MQTT_Api_Server_Lifesaver.Extention
                 {
                     listenOptions.Protocols = HttpProtocols.Http2;
                 });
-
-                options.Listen(IPAddress.Any, 6726, listenOptions =>
-                {
-                    listenOptions.Protocols = HttpProtocols.Http1;
-                });
+                options.Listen(IPAddress.Any, 6726);
             });
         }
     }
